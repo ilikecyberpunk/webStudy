@@ -1,64 +1,68 @@
-
 <!DOCTYPE html>
 <html>
     <head>
-        <title>flexbox연습하기</title>
-        <meta charset="UTF-8">
-        
+        <title>flexbox정리</title>
+        <meta charset = "UTF-8">
         <style>
-            body {
-                background: beige;
-                display: flex;              /* flexbox 활성화 */
-                border: 5px dotted black;
-                height: 100%;              /* 컨테이너 높이 */
-                width: 100%;               /* 컨테이너 너비 */
+            /* flexbox = 콘테이너 안에 아이템이 있는 구성 */
+            /* 수직축 (main axis) 과 수평축 (cross axis) 이 있다 */
+            /* 중심축을 main axis로 두면 cross axis는 반대축이 된다 */
 
-                /* flex 방향 설정 */
-                flex-direction: row;        /* 가로 방향으로 배치 */
+        
+            .container{
+                background:beige;
+                height : 100vh;
+                border : 1px solid black;
 
-                /* 줄바꿈 설정 */
-                flex-wrap: wrap;            /* 공간 부족하면 줄바꿈 허용 */
+                display : flex;
 
-                /* 주축(가로축) 정렬 방식 */
-                justify-content: center;    /* 아이템들을 가로 중앙에 정렬 */
+                /* 기본 축 설정 : row, row-reverse, column, column-reverse */
+                flex-direction : row;
 
-                /* 교차축(세로축) 정렬 방식 */
-                align-items: center;        /* 한 줄 안에서 세로 중앙 정렬 */
-                align-content: center;      /* 여러 줄 전체를 세로 중앙 정렬 */
+                /* 아이템들이 넘칠때 줄바꿈여부  wrap, nowrap */
+                /* reverse도 있긴 함 */
+                flex-wrap : wrap;
+
+                /* 아이템 배치 방법 justify-content */
+
+                    /* 왼-오 정렬 : flex-start */
+                    /* 반대 flex-end */
+                    justify-content : flex-start;
+                    
+                    /* 아이템 사이 공간 띄우기 */
+                    /* 그냥 띄우기 space around */
+                    /* 일정 간격으로 띄우기 space evenly */
+                    justify-content : space-around;
+                
+            
+                /* 반대 축에서 아이템 정렬 방식 */
+                align-items : center;
+                
+
+
+            }
+            .item{
+                width : 50px;
+                height : 50px;
+            }
+            .item1{
+                background-color: red;
+            }
+            .item2{
+                background-color: blue;
+            }
+            .item3{
+                background-color: yellow;
             }
 
-            .item {
-                border: 1px solid red;
-                width: 80px;                /* 아이템 너비 */
-                height: 80px;               /* 아이템 높이 */
-                display: flex;              /* 안쪽 텍스트도 중앙 정렬 */
-                justify-content: center;
-                align-items: center;
-                font-size: 20px;            /* 숫자 크게 표시 */
-                background: lightyellow;
-            }
+
         </style>
     </head>
     <body>
-
-        <!-- order: 숫자가 작을수록 앞에 배치됨 -->
-        <div class="item" style="order:0;">1</div>
-        <div class="item" style="order:1;">2</div>
-        <div class="item" style="order:2;">3</div>
-        <div class="item" style="order:3;">4</div>
-        <div class="item" style="order:4;">5</div>
-        <div class="item" style="order:5;">6</div>
-        <div class="item" style="order:6;">7</div>
-        <div class="item" style="order:7;">8</div>
-        <div class="item" style="order:8; flex-grow : 1;">9</div>
-
-        <!-- flex-grow:1; == 화면에 꽉 채우게  -->
-        <div class="item" style="order:-1; flex-grow:1;">10</div> <!-- 맨 앞에 오도록 설정 -->
-
-        <!-- 참고자료 링크 -->
-        <a style="border:5px solid black; margin-top:20px; display:block;" 
-           href="https://developer.mozilla.org/ko/docs/Learn_web_development/Core/CSS_layout/Flexbox">
-           참고자료 - 까먹을때 쓰삼
-        </a>
+        <div class="container">
+            <h1 class="item item1">1</h1>
+            <h1 class="item item2">2</h1>
+            <h1 class="item item3">3</h1>
+        </div>
     </body>
 </html>

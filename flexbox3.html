@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>flexbox정리</title>
+        <meta charset = "UTF-8">
+        <style>
+            /* flexbox = 콘테이너 안에 아이템이 있는 구성 */
+            /* 수직축 (main axis) 과 수평축 (cross axis) 이 있다 */
+            /* 중심축을 main axis로 두면 cross axis는 반대축이 된다 */
+
+        
+            div{
+                display:flex;
+                flex-direction : row;
+                justify-content : flex-start;
+                height : 100vh;
+                background-color: beige;
+
+            }
+            .item{
+                width : 40px;
+                height : 40px;
+            }
+            .item1{
+                background-color: red;
+                flex-basis : 60%;    /* 퍼센트로 늘리기 */
+            }
+            .item2{
+                background-color: blue;
+                flex-basis:30%;
+
+                align-self : center ; /*반대축에서 가운데 정렬핫기*/
+                
+            }
+            .item3{
+                background-color: yellow;
+                flex-basis:10%;
+            }
+
+
+        </style>
+    </head>
+    <body>
+        <div>
+            <h1 class="item item1">1</h1>
+            <h1 class="item item2">2</h1>
+            <h1 class="item item3">3</h1>
+        </div>
+    </body>
+</html>
