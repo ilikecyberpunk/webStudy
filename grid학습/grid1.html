@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>grid</title>
+        <meta charset="UTF-8">
+        <style>
+            .container{
+
+                /* 1. 템플렛 지정 */
+                display:grid;
+                grid-template-columns: 100px 100px 100px; /*3개의 열 각각 너비 100px*/
+                /* grid-template-rows : 100px 200px 100px 300px; */
+                grid-auto-rows : minmax(100px, auto); /*최소150, 요소에 글자 많아지면 자동으로 늘려라*/
+                grid-gap:10px; /*요소간 공간*/
+                
+
+
+
+
+            
+            }
+            .item{
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                border:1px black solid;
+                font-weight : bold;
+            }
+
+            .item2{
+                grid-column-start: 2;
+                grid-column-end : 4;
+                grid-row:1/4;
+            }
+
+            .color1{
+                background-color: red;
+            }.color2{
+                background-color: orange;
+            }.color3{
+                background-color: yellow;
+            }.color4{
+                background-color: green;
+            }.color5{
+                background-color: blue;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="container">
+            <div class="item color1">item1</div>
+            <div class="item item2 color2">item2</div>
+            <div class="item color3">item3</div>
+            <div class="item color4">item4</div>
+            <div class="item color5">item5</div>
+            <div class="item color1">item6</div>
+            <div class="item color2">item7</div>
+            <div class="item color3">item8</div>
+            <div class="item color4">item9</div>
+            <div class="item color5">item10</div>    
+        </div>
+    </body>
+</html>
