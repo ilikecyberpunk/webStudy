@@ -1,0 +1,126 @@
+<!-- before going start. all these files for restudies r refer from webprogramming subject when i during studying on kit uni on 2 grade. and after this file all of these r going like this way .just letting u know. u bro, ur self. keep going forward, dont be staying on depressed or exhausted from these sheets. u gonna be hired for sure. cheer u up -->
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>this page is for restudying js </title>
+        <meta charset="UTF-8">
+        <style>
+            .header{
+                text-align: center;
+                border-top: red 3px solid;
+                border-bottom:red 3px solid;
+                font-family: 'Times New Roman', Times, serif;
+                font-size: 100px;
+                
+            }
+
+            h2{
+                border : 1px solid orange;
+            }
+            h2:hover{
+                background-color: cyan;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 class="header">js restudy 1</h1>
+
+        <h2 id="e1">e1</h2>
+        <h2 id="e2">e2</h2>
+        <h2 id="e3">e3</h2>
+        <h2 class="e4">e4</h2>
+        <h2 class="e5">e5</h2>
+
+        <div style="text-align: center; font-size:50px; display:flex; flex-direction: column;">
+            <script>
+                let a = 1;
+                var b = 2;
+                const c = 0;
+
+                let str = "hello";
+                document.write(typeof(str)+"<br>");
+                let pi=3.14;
+                document.write(typeof(pi));
+                let isTrue=true;
+                document.write(typeof(isTrue));
+                let obj ={name :"Alice", age:99};
+                document.write(typeof(obj));
+
+                let numstr="12";
+                document.write(Number(numstr));
+
+                let person={
+                    name:"bab",
+                    age:12,
+                    gender:"male"
+                };
+                document.write(person.age);
+
+                if(person.age<12){
+                    document.write("12살 보다 작으니 출입 금지입니다 ");
+
+                }else if(person.age === 12){
+                    document.write("조건에 부합하여 입장이 가능 합니다 ");
+                }
+                else{
+                    document.write("음");
+
+                }
+
+                const result=a<b?"a가 더 작습니다":"b가 더 작습니다";
+                document.write(result);
+
+                switch(a){
+                    case 1:
+                        document.write("1이네");
+                        break;
+                    case 2:
+                        document.write("2네");
+                    default:
+                        document.write("몰라");
+                }
+
+                for(let i=0; i<10; i++){
+                    document.write(i+"<br>");
+                }
+                
+                let count=23;
+                while(count <= 50){
+                    document.write("count : "+count + "<br>");
+                    count++;
+                }
+
+                let element1 = document.querySelector("#e1");
+                let element2 = document.getElementById("e2");
+                let element3 = document.querySelectorAll("#e3");
+                let element4 = document.getElementsByClassName("e4")[0];
+                let element5 = document.getElementsByTagName("h2")[4];
+
+                function fun1(){
+                    alert("u just clicked");
+                    element1.innerHTML="kk";
+                }
+                function fun2(){
+                    let c = confirm("r u adult");
+                    if(c){
+                        element2.innerHTML="result of confirm test : hes adult" + "<br>";
+                    }
+                    else{
+                        element2.innerHTML="result of confirm test : hes not adult" + "<br>";
+                    }
+                }
+                function fun3(){
+                    let promptt = prompt("just for prompt test");
+                    element3[0].innerHTML="ㅇㅇ";
+                }
+
+                element1.addEventListener("click", fun1);   
+                element2.addEventListener("dblclick", fun2);
+                element3.forEach(e => e.addEventListener("dblclick", fun3));
+
+            </script>
+        </div>
+
+        
+    </body>
+</html>

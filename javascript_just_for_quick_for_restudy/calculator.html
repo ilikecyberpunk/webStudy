@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>cal</title>
+        <meta charset="UTF-8">
+        <style>
+            body{
+                height : 100vh;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items:center;
+                background-color: darkkhaki;
+            }
+            .cal{
+                display:grid;
+                grid-template-columns: 100px 100px 100px 100px;
+                grid-template-rows: 100px 100px 100px 100px 100px;
+                border:2px solid black;
+                border-radius: 20px;
+                
+            }
+            .cal h1{
+                grid-column:1/ span 4;
+                display: flex;
+                justify-content: flex-end;
+                padding-right : 30px
+            }
+            div div{
+                border: 1px black solid;
+                border-radius: 10px;
+                display:flex;
+                justify-content: center;
+                align-items: center;
+                font-size: 25px;
+                font-family: 'Times New Roman Bold Italic', Times, serif;
+            }
+            div div:hover{
+                background-color: gold;
+            }
+            #header{
+                text-align:center;
+                font-size: 70px;
+                transform: skew(5deg, 5deg);
+                margin : 100px;
+                font-family: 'Times New Roman Bold Italic', Times, serif;
+                
+            }
+        </style>
+    </head>
+    
+    <body>
+        <h1 id="header">minimal calculator</h1>
+        <div class="cal">
+            <h1>0</h1>
+            <div>+</div>
+            <div>-</div>
+            <div>*</div>
+            <div>/</div>
+            <div>1</div>
+            <div>2</div>
+            <div>3</div>
+            <div>4</div>
+            <div>5</div>
+            <div>6</div>
+            <div>7</div>
+            <div>8</div>
+            <div>9</div>
+            <div>delete</div>
+            <div>reset</div>
+            <div>•‿•</div>
+        </div>
+
+        
+    </body>
+</html>
