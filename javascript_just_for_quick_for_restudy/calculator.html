@@ -32,11 +32,12 @@
                 display:flex;
                 justify-content: center;
                 align-items: center;
-                font-size: 25px;
+                font-size: 30px;
                 font-family: 'Times New Roman Bold Italic', Times, serif;
             }
             div div:hover{
                 background-color: gold;
+                /* box-shadow: 5px 5px 5px black; */
             }
             #header{
                 text-align:center;
@@ -52,8 +53,8 @@
     <body>
         <h1 id="header">minimal calculator</h1>
         <div class="cal">
-            <h1>0</h1>
-            <div>+</div>
+            <h1 id="n">0</h1>
+            <div id="plus">+</div>
             <div>-</div>
             <div>*</div>
             <div>/</div>
@@ -68,9 +69,31 @@
             <div>9</div>
             <div>delete</div>
             <div>reset</div>
-            <div>•‿•</div>
+            <div style="font-size: 50px;">😺</div>
         </div>
 
-        
+        <script>
+            let n = document.getElementById("n");
+
+            let allDivs = document.querySelectorAll(".cal div");
+            
+            let num =[];
+
+            for(let i = 4; i<=12; i++){
+                num.push(allDivs[i]);
+            }
+            
+            for(let i = 0; i<= 8 ; i++){
+                num[i].onclick = function(){
+                    if(n.innerHTML === "0"){
+                        n.innerHTML = String(num[i].innerHTML);
+                    }
+                    else{
+                        n.innerHTML += String(num[i].innerHTML);
+                    }
+                }
+            }
+
+        </script>
     </body>
 </html>
