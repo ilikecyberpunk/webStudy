@@ -24,7 +24,9 @@
                 grid-column:1/ span 4;
                 display: flex;
                 justify-content: flex-end;
-                padding-right : 30px
+                padding-right : 30px;
+                /* flex-wrap : wrap; */
+                /* border: 1px red solid; */
             }
             div div{
                 border: 1px black solid;
@@ -54,10 +56,11 @@
         <h1 id="header">minimal calculator</h1>
         <div class="cal">
             <h1 id="n">0</h1>
-            <div id="plus">+</div>
+            <div>+</div>
             <div>-</div>
             <div>*</div>
             <div>/</div>
+            <div>=</div>
             <div>1</div>
             <div>2</div>
             <div>3</div>
@@ -69,7 +72,6 @@
             <div>9</div>
             <div>delete</div>
             <div>reset</div>
-            <div style="font-size: 50px;">😺</div>
         </div>
 
         <script>
@@ -79,7 +81,7 @@
             
             let num =[];
 
-            for(let i = 4; i<=12; i++){
+            for(let i = 5; i<=13; i++){
                 num.push(allDivs[i]);
             }
             
@@ -94,6 +96,74 @@
                 }
             }
 
+            let storageOperator = [];
+
+            function funPlus(){
+                let s = Number(n.innerHTML);
+                storageOperator.push(s);
+                let operator = "+";
+                storageOperator.push(operator);
+                n.innerHTML = "0";
+            }
+
+            function forMinus(){
+                let s = Number(n.innerHTML);
+                storageOperator.push(s);
+                let operator = "-";
+                storageOperator.push(operator);
+                n.innerHTML = "0";
+            }
+
+            function forMultiple(){
+                let s = Number(n.innerHTML);
+                storageOperator.push(s);
+                let operator = "*";
+                storageOperator.push(operator);
+                n.innerHTML = "0";
+            }
+
+            function forDivide(){
+                let s = Number(n.innerHTML);
+                storageOperator.push(s);
+                let operator = "/";
+                storageOperator.push(operator);
+                n.innerHTML = "0";
+            }
+
+            function resultt(){
+                storageOperator.push(Number(n.innerHTML));
+                let i = 0;
+                let result;
+                while(i < storageOperator.length){
+                    if(typeof storageOperator[i] != "number"){
+                        if(storageOperator[i] ==="+"){
+                            result = storageOperator[i-1] + storageOperator[i+1];
+                        }
+                        else if(storageOperator[i] === "-"){
+                            result = storageOperator[i-1] - storageOperator[i+1];
+                        }
+                        else if(storageOperator[i] === "*"){
+                            result = storageOperator[i-1] * storageOperator[i+1];
+                        }
+                        else if(storageOperator[i] === "/"){
+                            result = storageOperator[i-1] / storageOperator[i+1];
+                        }
+                    }
+                    n.innerHTML = String(result);
+                    i++;
+                }
+                storageOperator = [];
+                
+            }
+
+
+
+            let plus = allDivs[0].addEventListener("click", funPlus);
+            let minus = allDivs[1].addEventListener("click", forMinus);
+            let multiple = allDivs[2].addEventListener("click", forMultiple);
+            let divide = allDivs[3].addEventListener("click", forDivide);
+            let result = allDivs[4].addEventListener("click", resultt);
+    
         </script>
     </body>
 </html>
