@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>part6</title>
+        <style>
+            #h{
+                border-top:1px solid red;
+                border-bottom:1px solid red;
+                font-size: 50px;
+                text-align: center;
+                font-family: 'Times New Roman Bold Italy', Times, serif;
+            }
+            .content{
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items : center;
+            }
+        </style>
+    </head>
+    <body>
+        <h1 id="h">part 6</h1>
+        <div class="content">
+            <h1>how to use array in javaScript</h1>
+            <script>
+                let foods =["chiken", "steak", "pizza"];
+                let nums = new Array(1,2,3,4);
+                document.write(nums + "<br>");
+                let empty_array = [];
+                
+                document.write(typeof(empty_array)  + "<br>");
+                empty_array.push("안녕");
+                document.write(empty_array + "<br>");
+                empty_array.unshift("안녕");
+                empty_array.pop();
+                empty_array.shift();
+
+                document.write(empty_array);
+                
+                // 자바스크립트 반복처리
+                foods.forEach(function(food, i){
+                    document.write(i + "번째 인덱스 값 : " + food+"<br>");
+
+                });
+
+                // 검색과 필터링 filter, find
+                let longest = foods.filter(f => f.length > 5);
+                let pizza = foods.find(f => f==="pizza");
+
+                document.write(longest + "<br>");
+                document.write(pizza + "<br>");
+
+                // 번형 map 
+                // forEach와 비슷하지만 새로운 배열을 변환한다 보면 됨
+                function change_features(values){
+                    return "이건" + values+"입니다";
+                }
+
+                let changed_foods = foods.map(change_features);
+                changed_foods.forEach(function(v, i){
+                    document.write("변형된 foods배열의 " + i + "번째 인덱스 값 : " + v + "<br>");
+                });
+
+                //정렬 sort
+                //역순 reverse
+                let numss = [1,2,23,423,5,23,5,345,43];
+                numss.sort((a,b)=>a-b);
+                document.write(numss + "<br>");
+
+                // let reversed_numss = numss.reverse((a,b)=> a-b);
+                let reversed_numss = numss.reverse();
+   
+                document.write(reversed_numss + "<br>");
+
+                //배열 합치기, 잘라내기 concat
+                let a = [1,2];
+                let b = [3,4];
+                let c = a.concat(b);
+                let sliced = c.slice(0, 3);
+                document.write(sliced + "<br>");
+
+                //배열 포함 여부 includes
+                document.write(c.includes(3)+"<br>");
+
+
+                //객체 배열
+                let members = [
+                    {name : "taeho", age : 22},
+                    {name : "alina", age : 25}
+                ];
+                //includes 대신 some
+                document.write(members.some(a => a.name==="alina")+"<br>");
+
+                let numsss = [1,2,2,324,324,23,5,34,65346];
+                let tt = numsss.filter(n=>n%2===0);
+                document.write(tt.map(t=> t*2) + "<br>");
+
+                let animals = ["고양이", "개", "코끼리", "닭", "돼지"];
+                document.write(animals.filter(n=>n.length<3));
+                
+
+            </script>
+        </div>
+    </body>
+</html>
